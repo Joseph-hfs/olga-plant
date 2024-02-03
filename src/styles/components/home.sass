@@ -1,0 +1,129 @@
+@use '../mixins'
+@use '../variables'
+
+#home
+    min-height: variables.$altura
+    @include mixins.center
+    .center
+        width: 100%
+        flex-direction: column
+
+        .home-container
+            @include mixins.center
+            justify-content: space-between
+            margin: 7rem 0
+
+            .home-content 
+                @include mixins.center
+                align-items: start
+                flex-direction: column
+
+                h3
+                    margin-bottom: .5rem
+                    font-size: 2.5rem
+                    color: variables.$color-green
+
+                p 
+                    margin: 1rem 0
+                    font-size: 1rem
+
+            .home-carousel
+                @include mixins.center
+                margin-left: 10rem
+                width: 400px
+                height: 50vh
+
+                .swiper
+                    @include mixins.center
+                    cursor: grab
+
+                    .img-slider
+                        @include mixins.center
+                        height: 50vh
+                        width: 100%
+                        background-color: variables.$color-white
+                        border-radius: 2rem
+
+                        .slide-item
+                            @include mixins.center
+                            height: 100%
+                            width: 100%
+                            background-size: cover
+                            background-position: center
+                            padding: 4rem
+
+                    .swiper-button-prev
+                        @include mixins.center
+                        top: 45%
+                        left: 0
+                        background: variables.$color-green
+                        padding: 1.5rem
+                        border-radius: 50%
+                        color: variables.$color-white
+                    
+                    .swiper-button-next
+                        @include mixins.center
+                        top: 45%
+                        right: 0
+                        background: variables.$color-green
+                        padding: 1.5rem
+                        border-radius: 50%
+                        color: variables.$color-white
+
+        .home-cards
+            display: flex
+            flex-wrap: wrap
+            width: 100%
+
+
+@media (max-width: 1200px)
+    #home 
+        .center
+            .home-container
+                .home-content
+                    h3
+                        font-size: 2rem
+                    p
+                        font-size: .8rem
+                    button
+                        font-size: .8rem
+
+@media (max-width: 1024px)
+    #home 
+        .center
+            .home-container
+                .home-content
+                    h3
+                        font-size: 1.7rem
+                .home-carousel
+                    width: 300px
+                    margin-left: 5rem
+                    .swiper
+                        .img-slider
+                            height: 40vh
+                            .slide-item
+                                padding: 0
+
+@media (max-width: 768px) 
+    #home 
+        .center
+            .home-container
+                .home-content
+                    h3
+                        font-size: 1.2rem
+                .home-carousel
+                    width: 250px
+                    margin-left: 3rem
+
+@media (max-width: 580px)
+    #home 
+        .center
+            .home-container
+                .home-content
+                    @include mixins.center
+                    h3
+                        font-size: 1.6rem
+                    p 
+                        text-align: center
+                .home-carousel
+                    display: none                  

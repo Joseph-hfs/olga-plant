@@ -1,0 +1,58 @@
+@use '../mixins'
+@use '../variables'
+
+#about
+    @include mixins.center
+    min-height: variables.$altura
+    
+    .center
+        width: 100%
+        justify-content: space-between
+
+        .about-img
+            margin-right: 2rem
+            height: 60vh
+            width: 50%
+            background-color: variables.$color-white
+            img
+                height: 100%
+                width: 100%
+
+        .about-content
+            width: 50%
+            h3
+                font-size: 2.5rem
+                color: variables.$color-green
+            p
+                margin: 2rem 0
+                font-size: 1rem
+
+            .about-content-order
+                @include mixins.center
+                flex-direction: column
+
+
+
+@media (max-width: 1024px)
+    #about
+        .center
+            .about-content
+                h3
+                    font-size: 1.8rem
+
+@media (max-width: 768px)
+    #about
+        .center
+            .about-img
+                display: none
+            .about-content
+                @include mixins.center
+                flex-direction: column
+                width: 100%
+                h3
+                    font-size: 2rem
+                p 
+                    text-align: center
+
+
+                

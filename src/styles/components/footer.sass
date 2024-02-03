@@ -1,0 +1,171 @@
+@use '../mixins'
+@use '../variables'
+
+#footer
+    @include mixins.center
+    height: 350px
+    width: 100%
+    background-color: variables.$color-black
+
+    .center
+        flex-direction: column
+        height: 100%
+        position: relative
+
+        .footer-content
+            @include mixins.center
+            width: 100%
+            gap: 10vw
+            color: variables.$color-white
+
+            .footer-logo
+                a
+                    font-size: 1.7rem
+                    font-weight: bold
+                    color: variables.$color-green
+                    i 
+                        font-size: 1.4rem
+
+            .footer-email
+                @include mixins.center
+                flex-direction: column
+                p
+                    margin-bottom: 1rem
+                    font-size: 1rem 
+                    font-weight: bold
+                .footer-contact
+                    input
+                        padding: .8rem 3rem .8rem .5rem
+                        border: none
+                        border: 1px solid white
+                        border-radius: .1rem
+                        background: transparent
+                        color: variables.$color-white
+                    button
+                        padding: .8rem .4rem
+                        margin-left: 1rem
+                        border: 2px solid variables.$color-green
+                        border-radius: .1rem
+                        background-color: variables.$color-green
+                        color: variables.$color-white
+                        font-size: .8rem
+                        font-weight: bold
+                        cursor: pointer
+                        transition: 500ms all
+                        &:hover
+                            border: 2px solid variables.$color-white
+                            background-color: variables.$color-back
+                            color: variables.$color-black
+
+            .footer-redes
+                @include mixins.center
+                flex-direction: column
+                h6
+                    margin-bottom: 1rem
+                    text-align: center
+                    font-size: 1rem
+                .footer-icons
+                    @include mixins.center
+                    gap: 1rem
+                    a   
+                        display: flex
+                        padding: .8rem
+                        border: 2px solid variables.$color-white
+                        color: variables.$color-white
+                        border-radius: 50%
+                        font-size: 1rem
+                        cursor: pointer
+                        &:hover
+                            transform: scale(1.1)   
+
+        .footer-reserved
+            @include mixins.center
+            position: absolute
+            bottom: 0
+            width: 100%
+            padding: 2rem 0
+            border-top: 1px solid white
+            P 
+                color: variables.$color-white
+                font-size: 1rem
+                margin: 0 1rem
+            .footer-reserved-second
+                color: variables.$color-green
+                font-weight: bold
+
+
+@media (max-width: 1024px)
+    #footer
+        .center
+            .footer-content
+                gap: 4vw
+                .footer-email
+                    p 
+                        font-size: 1rem
+                    .footer-contact
+                        input
+                            padding: .8rem 3rem .8rem .5rem
+                        button
+                            margin-left: .2rem
+                            padding: .8rem .4rem
+                .footer-redes
+                    h6
+                        font-size: 1rem
+                        color: variables.$color-green
+                    .footer-icons
+                        gap: .54rem
+                        a
+                            padding: .5rem
+                            font-size: 1rem
+            .footer-reserved
+                padding: 1rem 0
+                p 
+                    font-size: .8rem
+
+@media (max-width: 768px)
+    #footer
+        .center
+            .footer-content
+                .footer-logo
+                    display: none
+                .footer-email
+                    p 
+                        font-size: 1rem
+                    .footer-contact
+                        input
+                            padding: .8rem 3rem .8rem .5rem
+                        button
+                            margin-left: .2rem
+                            padding: .8rem .4rem
+                .footer-redes
+                    h6
+                        font-size: 1rem
+                        color: variables.$color-green
+                    .footer-icons
+                        gap: .54rem
+                        a
+                            padding: .5rem
+                            font-size: 1rem
+            .footer-reserved
+                padding: 1rem 0
+                p 
+                    font-size: .8rem
+
+@media (max-width: 580px)
+    #footer
+        .center
+            .footer-content
+                .footer-email
+                    p 
+                        font-size: .8rem
+                    .footer-contact
+                        input
+                            padding: .4rem 0 .4rem .1rem
+                        button
+                            padding: .4rem 0
+                .footer-redes
+                    h6
+                        font-size: .8rem
+                    .footer-icons
+                        a
+                            font-size: .8rem

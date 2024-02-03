@@ -1,0 +1,16 @@
+@use '../mixins'
+@use '../variables'
+
+.tips-container
+    @include mixins.center
+    width: 50%
+    height: 20vh
+
+    .tips-img
+        width: 50%
+        height: 100%
+
+    .tips-text
+        display: flex
+        slign-items: start
+        flex-direction: column

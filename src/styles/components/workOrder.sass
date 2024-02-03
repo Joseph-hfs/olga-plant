@@ -1,0 +1,44 @@
+@use '../mixins'
+@use '../variables'
+
+.about-work
+    display: flex
+    align-items: start
+    width: 100%
+
+    .about-work-number
+        @include mixins.center
+        width: 20%
+        span
+            margin: .5rem 0
+            padding: .8rem 1.4rem
+            border-radius: 50%
+            background-color: variables.$color-green
+            font-size: 1rem
+            font-weight: bold
+            color: variables.$color-white
+
+    .about-work-content
+        @include mixins.center
+        flex-direction: column
+        align-items: start
+        width: 80%
+        margin: .8rem 1rem
+        h4
+            font-size: 1.2rem
+            font-weight: bold
+        h6
+            font-size: .8rem
+            font-weight: normal
+        
+
+
+@media (max-width: 580px)
+    .about-work
+        @include mixins.center
+        .about-work-content
+            h4
+                font-size: 1rem
+            h6
+                font-size: .6rem
+

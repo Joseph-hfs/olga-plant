@@ -1,0 +1,100 @@
+@use '../mixins'
+@use '../variables'
+
+#header
+    @include mixins.center
+    justify-content: space-between
+    height: 90px
+    width: 100%
+    top: 0
+    background-color: variables.$color-back
+    z-index: 100
+    position: fixed
+
+    .center
+        justify-content: space-between
+        width: 100%
+
+        .logo
+            a
+                font-size: 1.5rem
+                font-weight: 700
+                color: variables.$color-green
+                cursor: pointer
+                i
+                    font-size: 1.2rem
+
+        .menu
+            @include mixins.center
+            display: none
+            margin: 0
+            margin-top: 10px
+            
+
+            .close-button
+                @include mixins.center
+                padding: .3rem
+                border: 1px solid variables.$color-black
+                border-radius: 50%
+                font-size: 2rem
+                background: variables.$color-back
+                cursor: pointer
+                z-index: 100
+
+            .hamburguer
+                font-size: 2rem
+                color: variables.$color-black
+                background: transparent
+                border: none
+                cursor: pointer
+
+        .navbar
+            @include mixins.center
+            a
+                margin: 0 1rem
+                font-size: 1rem
+                font-weight: bold
+                color: variables.$color-black
+
+        .mobile-menu
+            @include mixins.center
+            flex-direction: column
+            position: absolute
+            top: 0px
+            right: 0
+            width: 120px
+            height: 100vh
+            background-color: variables.$color-black
+            opacity: 0.8
+            z-index: 99
+
+            a 
+                color: variables.$color-back
+                text-decoration: none
+                margin: 3rem 0  
+
+                &:hover
+                    text-decoration: underline
+
+        .cart
+            .cart-icon
+                @include mixins.center
+                padding: .7rem
+                border: 1px solid variables.$color-black
+                border-radius: 50%
+                font-size: 1.5rem
+                color: variables.$color-green
+                cursor: pointer
+
+
+@media (max-width: 768px)
+    #header
+        .center
+            .menu 
+                display: flex
+            .navbar
+                display: none
+            .mobile-menu: 
+                display: flex
+            .cart
+                display: none

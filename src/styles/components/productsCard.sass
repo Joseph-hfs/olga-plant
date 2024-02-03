@@ -1,0 +1,77 @@
+@use '../mixins'
+@use '../variables'
+
+.products-card
+    @include mixins.center
+    flex-direction: column
+    margin: 1.5rem 
+    width: 20%
+
+    .products-card-img
+        @include mixins.center
+        positon: relative
+        height: 25vh
+        width: 100%
+        border-radius: 1rem
+        background-color: variables.$color-white
+
+        & img
+            height: 100%
+            width: 100%
+
+    .products-card-content
+        @include mixins.center
+        width: 100%
+        padding: 1rem 0
+        background-color: variables.$color-back
+
+        .products-card-content-box
+            width: 70%
+            h4
+                font-weight: bold
+                font-size: 1.3rem
+            p 
+                font-weight: normal
+                font-size: .8rem
+
+        .products-card-content-value
+            width: 30%  
+            & span
+                @include mixins.center
+                color: variables.$color-green
+                font-size: 1rem
+                font-weight: bold
+
+
+@media (max-width: 1200px)
+   .products-card
+        width: 25%
+        .products-card-img
+            height: 30vh
+        .products-card-content
+            padding: .5rem 0
+            .products-card-content-box
+                h4
+                    font-size: 1rem
+                p 
+                    font-size: .6rem
+
+@media (max-width: 1024px)
+    .products-card
+        width: 35%
+        margin: 1rem
+
+@media (max-width: 768px)
+    .products-card
+        .products-card-img
+            height: 25vh
+        .products-card-content
+            .products-card-content-value
+                span
+                    font-size: .8rem
+
+@media (max-width: 580px)
+    .products-card
+        width: 40%
+        .products-card-img
+            height: 20vh
